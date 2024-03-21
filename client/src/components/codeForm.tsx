@@ -23,6 +23,8 @@ import {
 } from "./ui/select";
 import { Textarea } from "./ui/textarea";
 import axios from "axios";
+import { useState } from "react";
+import { useToast } from "./ui/use-toast";
 
 const formSchema = z.object({
   username: z.string().min(3, {
@@ -37,6 +39,9 @@ const formSchema = z.object({
 
 export const CodeForm = () => {
   // 1. Define your form.
+
+  const [submitDisabled, setSubmitDisabled] = useState(false);
+  const { toast } = useToast();
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -45,13 +50,23 @@ export const CodeForm = () => {
   });
 
   function onSubmit(values: z.infer<typeof formSchema>) {
+    setSubmitDisabled(true);
     axios
       .post("https://tuf-assignment-f5kh.onrender.com/submit", values)
       .then((response) => {
         console.log(response.data);
+        setSubmitDisabled(false);
+        toast({
+          title: "Success",
+          description: "Your code has been submitted successfully.",
+        });
       })
       .catch((error) => {
         console.error(error);
+        toast({
+          title: "Error",
+          description: "An error occurred while submitting your code.",
+        });
       });
   }
 
@@ -130,7 +145,13 @@ export const CodeForm = () => {
               </FormItem>
             )}
           />
-          <Button type="submit">Submit</Button>
+          <Button
+            type="submit"
+            disabled={submitDisabled}
+            className={submitDisabled ? " opacity-25" : ""}
+          >
+            Submit
+          </Button>
         </form>
       </Form>
     </div>
