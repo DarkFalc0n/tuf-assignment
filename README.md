@@ -6,6 +6,7 @@ Code Submission Utility
 ![PNPM](https://img.shields.io/badge/pnpm-%234a4a4a.svg?style=for-the-badge&logo=pnpm&logoColor=f69220)
 ![Express.js](https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB)
 ![Next JS](https://img.shields.io/badge/Next-black?style=for-the-badge&logo=next.js&logoColor=white)
+![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)
 ![MySQL](https://img.shields.io/badge/mysql-4479A1.svg?style=for-the-badge&logo=mysql&logoColor=white)
 ![Render](https://img.shields.io/badge/Render-%46E3B7.svg?style=for-the-badge&logo=render&logoColor=white)
 ![Vercel](https://img.shields.io/badge/vercel-%23000000.svg?style=for-the-badge&logo=vercel&logoColor=white)
@@ -28,11 +29,17 @@ This is a code submission platform built as an assignment for TUF intern positio
   }
   ```
 - GET `/fetch`
+### Details
+- ORM: [Drizzle](https://orm.drizzle.team/)
+- Schema/Validation: [Zod](https://zod.dev/)
 
 ## Frontend
 ✅ Link to hosted website: [https://tuf-assignment-azure.vercel.app/](https://tuf-assignment-azure.vercel.app/)
 - [`/submit`](https://tuf-assignment-azure.vercel.app/submit)
 - [`/submissions`](https://tuf-assignment-azure.vercel.app/submissions)
+### Details
+ - CSS Framework: [Tailwind CSS](https://tailwindcss.com/)
+ - UI components: [shadcn/ui](https://ui.shadcn.com/)
 
 ## MySQL instance
 ✅ Hosted on [Aiven - Free Tier](https://aiven.io/)
