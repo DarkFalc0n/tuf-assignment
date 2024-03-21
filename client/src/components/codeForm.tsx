@@ -23,13 +23,14 @@ import {
 } from "./ui/select";
 import { Textarea } from "./ui/textarea";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import axios from "axios";
 
 const formSchema = z.object({
   username: z.string().min(3, {
     message: "Username must be at least 3 characters.",
   }),
   language: z.enum(["CPP", "PYTHON", "JAVA", "JAVASCRIPT"]),
-  stdin: z.string(),
+  stdin: z.string().optional(),
   code: z.string().min(1, {
     message: "Code is required",
   }),
@@ -45,7 +46,14 @@ export const CodeForm = () => {
   });
 
   function onSubmit(values: z.infer<typeof formSchema>) {
-    console.log(values);
+    axios
+      .post("https://tuf-assignment-f5kh.onrender.com/submit", values)
+      .then((response) => {
+        console.log(response.data);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
   }
 
   return (
