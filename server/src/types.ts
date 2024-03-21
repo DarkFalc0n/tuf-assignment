@@ -1,6 +1,6 @@
 import { z } from "zod";
 
-const sqlDbVariables = z.object({
+const env = z.object({
   MYSQL_HOST: z.string(),
   MYSQL_DATABASE: z.string(),
   MYSQL_PORT: z.number(),
@@ -8,10 +8,8 @@ const sqlDbVariables = z.object({
   MYSQL_PASSWORD: z.string(),
 });
 
-sqlDbVariables.parse(process.env);
-
 declare global {
   namespace NodeJS {
-    interface ProcessEnv extends z.infer<typeof sqlDbVariables> {}
+    interface ProcessEnv extends z.infer<typeof env> {}
   }
 }

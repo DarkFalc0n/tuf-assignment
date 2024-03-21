@@ -6,7 +6,9 @@
   "scripts": {
     "dev": "ts-node src/index.ts",
     "build": "tsc",
-    "start": "node dist/index.js"
+    "start": "NODE_PATH=dist/ node --env-file=.env dist/index ",
+    "db:generate": "drizzle-kit generate:pg --schema ./src/db/schema.ts --out=./src/db/migrations",
+    "db:migrate": "NODE_PATH=dist/ node --env-file=.env dist/db/migration"
   },
   "keywords": [],
   "author": "",

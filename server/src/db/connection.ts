@@ -1,7 +1,10 @@
-import { drizzle } from "drizzle-orm/mysql2";
+import { MySql2Database, drizzle } from "drizzle-orm/mysql2";
 import mysql from "mysql2/promise";
+import * as schema from "./schema";
 
-export const getDbConnection = async () => {
+let db: MySql2Database<typeof schema>;
+
+const getDbConnection = async () => {
   try {
     const connection = await mysql.createConnection({
       host: process.env.MYSQL_HOST,
@@ -11,8 +14,10 @@ export const getDbConnection = async () => {
       port: +process.env.MYSQL_PORT!,
     });
     console.log("Mysql Connection created");
-    return drizzle(connection);
+    return (db = drizzle(connection, { schema, mode: "default" }));
   } catch (error) {
     console.error("Error in creating connection", error);
   }
 };
+
+export { db, getDbConnection };

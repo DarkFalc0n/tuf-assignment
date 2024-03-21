@@ -1,7 +1,7 @@
 import express from "express";
-import { getDbConnection } from "./utils/db.config";
+import { getDbConnection } from "./db/connection";
 import dotenv from "dotenv";
-import { submitCode, submissions } from "./routes";
+import { submitCode, fetch } from "./routes";
 
 dotenv.config();
 const app = express();
@@ -15,7 +15,7 @@ app.get("/", (_, res) => {
 app.use("/submit", submitCode);
 
 //get all submissions route
-app.use("/submissions", submissions);
+app.use("/fetch", fetch);
 
 app.listen(port, () => {
   const dbClient = getDbConnection();

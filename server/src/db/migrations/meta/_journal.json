@@ -1,0 +1,13 @@
+{
+  "version": "5",
+  "dialect": "pg",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "5",
+      "when": 1711004649857,
+      "tag": "0000_gifted_zarek",
+      "breakpoints": true
+    }
+  ]
+}

@@ -1,4 +1,4 @@
-import submissions from "./submissions";
+import fetch from "./fetch";
 import submitCode from "./submitCode";
 
-export { submitCode, submissions };
+export { submitCode, fetch };
