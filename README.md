@@ -12,12 +12,12 @@ Code Submission Utility
 ![Vercel](https://img.shields.io/badge/vercel-%23000000.svg?style=for-the-badge&logo=vercel&logoColor=white)
 
 
-## Overview
+## 👁️‍🗨 Overview
 This is a code submission platform built as an assignment for TUF intern position.
 ![tuf](https://github.com/DarkFalc0n/tuf-assignment/assets/59203815/eae76a71-3453-4a76-94bc-2ab01e5723b8)
 
 
-## Backend 
+## 🛠️ Backend 
 ✅ Link to hosted server: [https://tuf-assignment-f5kh.onrender.com/](https://tuf-assignment-f5kh.onrender.com/)
 - POST `/submit`
   ```ts
@@ -33,7 +33,7 @@ This is a code submission platform built as an assignment for TUF intern positio
 - ORM: [Drizzle](https://orm.drizzle.team/)
 - Schema/Validation: [Zod](https://zod.dev/)
 
-## Frontend
+## 🖥️ Frontend
 ✅ Link to hosted website: [https://tuf-assignment-azure.vercel.app/](https://tuf-assignment-azure.vercel.app/)
 - [`/submit`](https://tuf-assignment-azure.vercel.app/submit)
 - [`/submissions`](https://tuf-assignment-azure.vercel.app/submissions)
@@ -41,12 +41,12 @@ This is a code submission platform built as an assignment for TUF intern positio
  - CSS Framework: [Tailwind CSS](https://tailwindcss.com/)
  - UI components: [shadcn/ui](https://ui.shadcn.com/)
 
-## MySQL instance
+## 💾 MySQL instance
 ✅ Hosted on [Aiven - Free Tier](https://aiven.io/)
 
 ## Progress
 ### Main Task - Completed ✅
-### Bonus Tasks - Partially Completed
+### Bonus Tasks - Partially Completed ⏳
 - [x] Integrated Judge0 API
 - [ ] Implemented Redis Cache
 
