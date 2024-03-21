@@ -5,5 +5,6 @@ CREATE TABLE `submissions` (
 	`language` enum('CPP','PYTHON','JAVA','JAVASCRIPT'),
 	`stdin` text DEFAULT (''),
 	`code` text NOT NULL,
+	`stdout_token` text DEFAULT (''),
 	CONSTRAINT `submissions_id` PRIMARY KEY(`id`)
 );

@@ -1,7 +1,7 @@
 {
   "version": "5",
   "dialect": "mysql",
-  "id": "3cceba4d-b69c-4a9d-8a38-5c78637ac52a",
+  "id": "c01ceabc-77c5-46e0-b183-0e2debc1e999",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "tables": {
     "submissions": {
@@ -50,6 +50,14 @@
           "primaryKey": false,
           "notNull": true,
           "autoincrement": false
+        },
+        "stdout_token": {
+          "name": "stdout_token",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false,
+          "default": "('')"
         }
       },
       "indexes": {},

@@ -13,4 +13,5 @@ export const submissions = mysqlTable("submissions", {
   language: mysqlEnum("language", ["CPP", "PYTHON", "JAVA", "JAVASCRIPT"]),
   stdin: text("stdin").default(""),
   code: text("code").notNull(),
+  stdout_token: text("stdout_token").default(""),
 });
