@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "ts-node src/index.ts",
     "build": "tsc",
-    "start": "NODE_PATH=dist/ node --env-file=.env dist/index ",
+    "start": "node dist/src/index.js",
     "db:generate": "pnpm drizzle-kit generate:mysql",
     "db:migrate": "NODE_PATH=dist/ node --env-file=.env dist/db/migration"
   },
