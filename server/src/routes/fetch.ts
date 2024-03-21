@@ -16,12 +16,12 @@ fetch.get("/", async (req, res) => {
     orderBy: [desc(submissions.createdAt)],
   });
 
-  const tokens = submissionsData.map((submission) => submission.stdout_token);
   const requiredData = await Promise.all(
-    tokens.map(async (token) => {
+    submissionsData.map(async (submission) => {
+      const token = submission.stdout_token;
       const response = await axios(fetchSubmissionStatus(token!));
       const data = submissionStatusSchema.parse(response.data);
-      return data;
+      return { ...submission, ...data };
     })
   );
   res.json({ submissions: requiredData });
