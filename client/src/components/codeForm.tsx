@@ -22,7 +22,6 @@ import {
   SelectValue,
 } from "./ui/select";
 import { Textarea } from "./ui/textarea";
-import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import axios from "axios";
 
 const formSchema = z.object({
