@@ -17,16 +17,13 @@ fetch.get("/", async (req, res) => {
   });
 
   const tokens = submissionsData.map((submission) => submission.stdout_token);
-  console.log("tokens from sqldb", tokens);
   const requiredData = await Promise.all(
     tokens.map(async (token) => {
       const response = await axios(fetchSubmissionStatus(token!));
-      console.log("response", response);
       const data = submissionStatusSchema.parse(response.data);
       return data;
     })
   );
-  console.log("requiredData", requiredData);
   res.json({ submissions: requiredData });
 });
 
